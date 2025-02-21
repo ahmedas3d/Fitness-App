@@ -27,10 +27,25 @@ class AppColors {
 }
 
 class AppTextStyles {
-  static const TextStyle heading1 = TextStyle(fontSize: 31);
-  static const TextStyle heading2 = TextStyle(fontSize: 24);
-  static const TextStyle heading3 = TextStyle(fontSize: 20);
-  static const TextStyle bodyText1 = TextStyle(fontSize: 16);
+  static const TextStyle heading1 = TextStyle(
+    fontSize: 31,
+    fontWeight: FontWeight.bold,
+    color: AppColors.fontColor1,
+  );
+  static const TextStyle heading2 = TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+    color: AppColors.fontColor1,
+  );
+  static const TextStyle heading3 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+    color: AppColors.fontColor1,
+  );
+  static const TextStyle bodyText1 = TextStyle(
+    fontSize: 16,
+    color: AppColors.fontColor2,
+  );
   static const TextStyle bodyText2 = TextStyle(fontSize: 13);
   static const TextStyle bodyText3 = TextStyle(fontSize: 10);
 }
@@ -39,4 +54,7 @@ class AppImages {
   static const String logo = 'assets/icons/logo.svg';
   static const String background = 'assets/images/background.jpg';
   static const String background2 = 'assets/images/background2.jpg';
+  static const String on1 = 'assets/images/exercise.png';
+  static const String on2 = 'assets/images/exercise2.png';
+  static const String on3 = 'assets/images/exercise3.png';
 }
