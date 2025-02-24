@@ -71,19 +71,16 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               setState(() => _currentPage = index);
             },
             itemBuilder: (context, index) {
-              return AnimatedSwitcher(
-                duration: const Duration(milliseconds: 500),
-                child: OnboardingContent(
-                  key: ValueKey(index),
-                  data: pages[index],
-                  width: width,
-                  height: height,
-                ),
+              return OnboardingContent(
+                key: ValueKey(index),
+                data: pages[index],
+                width: width,
+                height: height,
               );
             },
           ),
           Positioned(
-            bottom: 38,
+            bottom: 20,
             left: 20,
             right: 20,
             child: Column(
@@ -184,53 +181,60 @@ class OnboardingContent extends StatelessWidget {
     required this.data,
     required this.width,
     required this.height,
-    required ValueKey<int> key,
-  });
+    Key? key, // تم تغيير ValueKey إلى Key
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Padding(
+      padding: const EdgeInsets.only(top: 35),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            data.image,
-            width: width * 0.9,
-            height: height * 0.55,
-            fit: BoxFit.contain,
+          Expanded(
+            flex: 2, // 60% من المساحة للصورة
+            child: Image.asset(
+              data.image,
+              width: width * 0.9,
+              fit: BoxFit.cover,
+            ),
           ),
-          GlassContainer.clearGlass(
-            width: width * 0.95,
-            height: height * 0.25,
-            borderGradient: LinearGradient(
-              colors: [
-                Colors.black.withOpacity(0.13),
-                Colors.black.withOpacity(0.13),
-              ],
-            ),
-            gradient: LinearGradient(
-              colors: [
-                Colors.black.withOpacity(0.13),
-                Colors.black.withOpacity(0.13),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-            borderRadius: BorderRadius.circular(30),
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(data.title, style: AppTextStyles.heading2),
-                  Text(data.subtitle, style: AppTextStyles.heading2),
-                  const SizedBox(height: 10),
-                  Text(
-                    data.description,
-                    textAlign: TextAlign.center,
-                    style: AppTextStyles.bodyText1,
+          Expanded(
+            flex: 1, // 40% من المساحة للـ GlassContainer
+            child: SingleChildScrollView(
+              child: GlassContainer.clearGlass(
+                width: width * 0.95,
+                height: height * 0.24,
+                borderGradient: LinearGradient(
+                  colors: [
+                    Colors.black.withOpacity(0.13),
+                    Colors.black.withOpacity(0.13),
+                  ],
+                ),
+                gradient: LinearGradient(
+                  colors: [
+                    Colors.black.withOpacity(0.13),
+                    Colors.black.withOpacity(0.13),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(30),
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(data.title, style: AppTextStyles.heading2),
+                      Text(data.subtitle, style: AppTextStyles.heading2),
+                      const SizedBox(height: 10),
+                      Text(
+                        data.description,
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.bodyText1,
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           ),
