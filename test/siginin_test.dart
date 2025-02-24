@@ -1,11 +1,24 @@
 import 'package:fitness_app/features/AuthFeature/presentation/screens/signin_screen.dart';
+import 'package:fitness_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   testWidgets('Sign In Screen Test', (WidgetTester tester) async {
     // 1. تحميل الواجهة
-    await tester.pumpWidget(MaterialApp(home: SignInScreen()));
+    await tester.pumpWidget(
+      MaterialApp(
+        localizationsDelegates: [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
+        home: SignInScreen(),
+      ),
+    );
 
     // 2. التحقق من وجود النصوص الأساسية
     expect(find.text('Welcome Back'), findsOneWidget);

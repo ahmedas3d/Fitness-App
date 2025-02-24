@@ -64,24 +64,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
             child: Container(color: Colors.black.withOpacity(0.3)),
           ),
-          // Positioned(
-          //   top: 50,
-          //   right: 20,
-          //   child: IconButton(
-          //     onPressed: () {
-          //       final newLocale =
-          //           Localizations.localeOf(context).languageCode == 'en'
-          //               ? const Locale('ar') // التغيير إلى العربية
-          //               : const Locale('en'); // التغيير إلى الإنجليزية
-          //       FitnessApp.setLocale(context, newLocale); // تحديث اللغة
-          //     },
-          //     icon: const Icon(
-          //       Icons.language,
-          //       color: AppColors.mainColor,
-          //       size: 28,
-          //     ),
-          //   ),
-          // ),
           PageView.builder(
             controller: _controller,
             itemCount: pages.length,
@@ -89,15 +71,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               setState(() => _currentPage = index);
             },
             itemBuilder: (context, index) {
-              return OnboardingContent(
-                data: pages[index],
-                width: width,
-                height: height,
+              return AnimatedSwitcher(
+                duration: const Duration(milliseconds: 500),
+                child: OnboardingContent(
+                  key: ValueKey(index),
+                  data: pages[index],
+                  width: width,
+                  height: height,
+                ),
               );
             },
           ),
           Positioned(
-            bottom: 20,
+            bottom: 38,
             left: 20,
             right: 20,
             child: Column(
@@ -198,55 +184,58 @@ class OnboardingContent extends StatelessWidget {
     required this.data,
     required this.width,
     required this.height,
+    required ValueKey<int> key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.asset(
-          data.image,
-          width: width * 0.9,
-          height: height * 0.55,
-          fit: BoxFit.contain,
-        ),
-        GlassContainer.clearGlass(
-          width: width * 0.95,
-          height: height * 0.28,
-          borderGradient: LinearGradient(
-            colors: [
-              Colors.black.withOpacity(0.13),
-              Colors.black.withOpacity(0.13),
-            ],
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            data.image,
+            width: width * 0.9,
+            height: height * 0.55,
+            fit: BoxFit.contain,
           ),
-          gradient: LinearGradient(
-            colors: [
-              Colors.black.withOpacity(0.13),
-              Colors.black.withOpacity(0.13),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          borderRadius: BorderRadius.circular(30),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(data.title, style: AppTextStyles.heading2),
-                Text(data.subtitle, style: AppTextStyles.heading2),
-                const SizedBox(height: 10),
-                Text(
-                  data.description,
-                  textAlign: TextAlign.center,
-                  style: AppTextStyles.bodyText1,
-                ),
+          GlassContainer.clearGlass(
+            width: width * 0.95,
+            height: height * 0.25,
+            borderGradient: LinearGradient(
+              colors: [
+                Colors.black.withOpacity(0.13),
+                Colors.black.withOpacity(0.13),
               ],
             ),
+            gradient: LinearGradient(
+              colors: [
+                Colors.black.withOpacity(0.13),
+                Colors.black.withOpacity(0.13),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+            borderRadius: BorderRadius.circular(30),
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(data.title, style: AppTextStyles.heading2),
+                  Text(data.subtitle, style: AppTextStyles.heading2),
+                  const SizedBox(height: 10),
+                  Text(
+                    data.description,
+                    textAlign: TextAlign.center,
+                    style: AppTextStyles.bodyText1,
+                  ),
+                ],
+              ),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

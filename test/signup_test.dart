@@ -1,16 +1,28 @@
 import 'package:fitness_app/features/AuthFeature/presentation/screens/signin_screen.dart';
+import 'package:fitness_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:fitness_app/features/AuthFeature/presentation/screens/signup_screen.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/custom_text_field.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/custom_text_password.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/social_button.dart';
 import 'package:fitness_app/features/Splash&Onbording/presentation/widgets/custom_button.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
   testWidgets('SignUpScreen Widget Test', (WidgetTester tester) async {
     // 1. تحميل الشاشة
-    await tester.pumpWidget(MaterialApp(home: SignUpScreen()));
+    await tester.pumpWidget(
+      MaterialApp(
+        localizationsDelegates: [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
+        home: SignInScreen(),
+      ),
+    );
 
     // 2. التحقق من وجود العناصر الأساسية
     expect(find.text('Hey There'), findsOneWidget);

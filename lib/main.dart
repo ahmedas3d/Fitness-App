@@ -42,9 +42,8 @@ class _FitnessAppState extends State<FitnessApp> {
       initialRoute: AppRoutes.onboarding,
       onGenerateRoute: AppRoutes.generateRoute,
       theme: ThemeData(fontFamily: 'Almarai'),
-      // locale: const Locale('ar'),
       locale: _locale,
-      localizationsDelegates: [
+      localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
