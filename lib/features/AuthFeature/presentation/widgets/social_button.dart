@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 
-class CustomButton extends StatelessWidget {
-  final String title;
+class SocialButton extends StatelessWidget {
   final VoidCallback onTap;
   final Color color;
-  final Color textColor;
+  final Color iconColor;
+  final IconData icon;
   final Color? borderColor;
   final double size;
-  final double width;
 
-  const CustomButton({
+  const SocialButton({
     super.key,
-    required this.title,
     required this.onTap,
     required this.color,
-    required this.textColor,
+    required this.iconColor,
+    required this.icon,
     this.borderColor,
     this.size = 50,
-    this.width = double.infinity,
   });
 
   @override
@@ -26,25 +24,16 @@ class CustomButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: size,
-        width: width,
+        width: size,
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(25),
           border: Border.all(
             color: borderColor ?? Colors.transparent,
-            width: 2,
+            width: 1,
           ),
         ),
-        child: Center(
-          child: Text(
-            title,
-            style: TextStyle(
-              color: textColor,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
+        child: Icon(icon, color: iconColor, size: 20),
       ),
     );
   }

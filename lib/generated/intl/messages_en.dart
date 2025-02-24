@@ -21,5 +21,69 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Already have an account?",
+    ),
+    "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+    "back": MessageLookupByLibrary.simpleMessage("Back"),
+    "createAccount": MessageLookupByLibrary.simpleMessage("Create An Account"),
+    "descOn1": MessageLookupByLibrary.simpleMessage(
+      "Lorem ipsum dolor sit amet consectetur. Eu urna ut gravida quis id pretium purus. Mauris massa.",
+    ),
+    "descOn2": MessageLookupByLibrary.simpleMessage(
+      "Stop waiting for the perfect moment. Start your journey now and transform your life!",
+    ),
+    "descOn3": MessageLookupByLibrary.simpleMessage(
+      "With dedication and the right mindset, you can achieve your fitness goals and build a better you!",
+    ),
+    "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account?",
+    ),
+    "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
+    "enterYourEmail": MessageLookupByLibrary.simpleMessage("Enter your email"),
+    "enterYourFirstName": MessageLookupByLibrary.simpleMessage(
+      "Enter your first name",
+    ),
+    "enterYourLastName": MessageLookupByLibrary.simpleMessage(
+      "Enter your last name",
+    ),
+    "enterYourPassword": MessageLookupByLibrary.simpleMessage(
+      "Enter your password",
+    ),
+    "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+    "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+    "heyThere": MessageLookupByLibrary.simpleMessage("Hey There"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "Invalid email format",
+    ),
+    "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
+    "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "nameTooShort": MessageLookupByLibrary.simpleMessage("Name is too short"),
+    "next": MessageLookupByLibrary.simpleMessage("Next"),
+    "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwordMustContain": MessageLookupByLibrary.simpleMessage(
+      "Password must contain:\n- At least 6 characters\n- 1 uppercase letter (A-Z)\n- 1 lowercase letter (a-z)\n- 1 number (0-9)\n- 1 special character",
+    ),
+    "pleaseEnterEmail": MessageLookupByLibrary.simpleMessage(
+      "Please enter email",
+    ),
+    "pleaseEnterFirstName": MessageLookupByLibrary.simpleMessage(
+      "Please enter your first name",
+    ),
+    "pleaseEnterLastName": MessageLookupByLibrary.simpleMessage(
+      "Please enter your last name",
+    ),
+    "register": MessageLookupByLibrary.simpleMessage("Register"),
+    "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+    "subTitleOn1": MessageLookupByLibrary.simpleMessage("Is Discipline"),
+    "subTitleOn2": MessageLookupByLibrary.simpleMessage("Take Action Today"),
+    "subTitleOn3": MessageLookupByLibrary.simpleMessage("Begins Now"),
+    "titleOn1": MessageLookupByLibrary.simpleMessage("The Price Of Excellence"),
+    "titleOn2": MessageLookupByLibrary.simpleMessage("No More Excuses"),
+    "titleOn3": MessageLookupByLibrary.simpleMessage("Your Fitness Journey"),
+    "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back"),
+  };
 }

@@ -1,5 +1,4 @@
-import 'package:fitness_app/features/AuthFeature/presentation/screens/signup_screen.dart'
-    show SignUpScreen;
+import 'package:fitness_app/features/AuthFeature/presentation/screens/signin_screen.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/auth_glass_container.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/custom_text_field.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/custom_text_password.dart';
@@ -14,12 +13,14 @@ import '../../../../../../core/constants/app_images.dart';
 import '../../../../../../core/constants/app_text_styles.dart';
 import '../widgets/bg_blur.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignUpScreen extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final GlobalKey<FormState> _formSignInKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formSignUpKey = GlobalKey<FormState>();
 
-  SignInScreen({super.key});
+  SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +51,7 @@ class SignInScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(S.of(context).heyThere, style: AppTextStyles.bodyText1),
-            Text(S.of(context).welcomeBack, style: AppTextStyles.heading1),
+            Text(S.of(context).createAccount, style: AppTextStyles.heading1),
           ],
         ),
       ),
@@ -60,15 +61,41 @@ class SignInScreen extends StatelessWidget {
   Widget _buildAuthForm(BuildContext context) {
     return AuthGlassContainer(
       width: MediaQuery.of(context).size.width * 0.95,
-      height: MediaQuery.of(context).size.height * 0.50,
+      height: MediaQuery.of(context).size.height * 0.55,
       child: Form(
-        key: _formSignInKey,
+        key: _formSignUpKey,
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
               Text(S.of(context).login, style: AppTextStyles.heading1),
               const SizedBox(height: 10),
+              CustomTextField(
+                controller: _lastNameController,
+                label: S.of(context).lastName,
+                hint: S.of(context).enterYourLastName,
+                icon: Icons.person_outline,
+                validator: (value) {
+                  if (value == null || value.isEmpty)
+                    return S.of(context).pleaseEnterLastName;
+                  if (value.length < 2) return S.of(context).nameTooShort;
+                  return null;
+                },
+              ),
+              const SizedBox(height: 12),
+              CustomTextField(
+                controller: _firstNameController,
+                label: S.of(context).firstName,
+                hint: S.of(context).enterYourFirstName,
+                icon: Icons.person_outline,
+                validator: (value) {
+                  if (value == null || value.isEmpty)
+                    return S.of(context).pleaseEnterFirstName;
+                  if (value.length < 2) return S.of(context).nameTooShort;
+                  return null;
+                },
+              ),
+              const SizedBox(height: 12),
               CustomTextField(
                 controller: _emailController,
                 label: S.of(context).email,
@@ -92,13 +119,13 @@ class SignInScreen extends StatelessWidget {
                 label: S.of(context).password,
                 hint: S.of(context).enterYourPassword,
               ),
-              _buildForgotPassword(context),
+              const SizedBox(height: 12),
               const OrDivider(),
               const SizedBox(height: 12),
               _buildSocialButtons(),
               const SizedBox(height: 20),
               CustomButton(
-                title: S.of(context).login,
+                title: S.of(context).register,
                 onTap: _handleLogin,
                 color: AppColors.mainColor,
                 textColor: AppColors.fontColor1,
@@ -106,19 +133,6 @@ class SignInScreen extends StatelessWidget {
               _buildRegisterLink(context),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget _buildForgotPassword(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerRight,
-      child: TextButton(
-        onPressed: () {},
-        child: Text(
-          S.of(context).forgotPassword,
-          style: const TextStyle(color: AppColors.mainColor),
         ),
       ),
     );
@@ -163,7 +177,7 @@ class SignInScreen extends StatelessWidget {
         TextButton(
           onPressed: () => Navigator.push(context, _createRoute()),
           child: Text(
-            S.of(context).register,
+            S.of(context).login,
             style: const TextStyle(color: AppColors.mainColor),
           ),
         ),
@@ -172,7 +186,7 @@ class SignInScreen extends StatelessWidget {
   }
 
   void _handleLogin() {
-    if (_formSignInKey.currentState!.validate()) {
+    if (_formSignUpKey.currentState!.validate()) {
       // Perform login logic
     }
   }
@@ -182,7 +196,7 @@ class SignInScreen extends StatelessWidget {
 Route _createRoute() {
   return PageRouteBuilder(
     transitionDuration: Duration(milliseconds: 200),
-    pageBuilder: (context, animation, secondaryAnimation) => SignUpScreen(),
+    pageBuilder: (context, animation, secondaryAnimation) => SignInScreen(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
       return FadeTransition(opacity: animation, child: child);
     },

@@ -1,8 +1,11 @@
 import 'dart:ui';
 
-import 'package:fitness_app/core/constants.dart';
+import 'package:fitness_app/core/constants/app_colors.dart';
+import 'package:fitness_app/core/constants/app_images.dart';
+import 'package:fitness_app/core/constants/app_text_styles.dart';
 import 'package:fitness_app/core/routes/routes.dart';
 import 'package:fitness_app/features/Splash&Onbording/presentation/widgets/custom_button.dart';
+import 'package:fitness_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -18,29 +21,32 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _controller = PageController();
   int _currentPage = 0;
 
-  final List<OnboardingData> pages = [
-    OnboardingData(
-      image: AppImages.on1,
-      title: "The Price Of Excellence",
-      subtitle: "Is Discipline",
-      description:
-          "Lorem ipsum dolor sit amet consectetur. Eu urna ut gravida quis id pretium purus. Mauris massa.",
-    ),
-    OnboardingData(
-      image: AppImages.on2,
-      title: "No More Excuses",
-      subtitle: "Take Action Today",
-      description:
-          "Stop waiting for the perfect moment. Start your journey now and transform your life!",
-    ),
-    OnboardingData(
-      image: AppImages.on3,
-      title: "Your Fitness Journey",
-      subtitle: "Begins Now",
-      description:
-          "With dedication and the right mindset, you can achieve your fitness goals and build a better you!",
-    ),
-  ];
+  late List<OnboardingData> pages;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    pages = [
+      OnboardingData(
+        image: AppImages.on1,
+        title: S.of(context).titleOn1,
+        subtitle: S.of(context).subTitleOn1,
+        description: S.of(context).descOn1,
+      ),
+      OnboardingData(
+        image: AppImages.on2,
+        title: S.of(context).titleOn2,
+        subtitle: S.of(context).subTitleOn2,
+        description: S.of(context).descOn2,
+      ),
+      OnboardingData(
+        image: AppImages.on3,
+        title: S.of(context).titleOn3,
+        subtitle: S.of(context).subTitleOn3,
+        description: S.of(context).descOn3,
+      ),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,16 +64,24 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
             child: Container(color: Colors.black.withOpacity(0.3)),
           ),
-          Positioned(
-            top: 30,
-            right: 20,
-            child: TextButton(
-              onPressed:
-                  () =>
-                      Navigator.pushReplacementNamed(context, AppRoutes.login),
-              child: const Text('Skip', style: AppTextStyles.bodyText1),
-            ),
-          ),
+          // Positioned(
+          //   top: 50,
+          //   right: 20,
+          //   child: IconButton(
+          //     onPressed: () {
+          //       final newLocale =
+          //           Localizations.localeOf(context).languageCode == 'en'
+          //               ? const Locale('ar') // التغيير إلى العربية
+          //               : const Locale('en'); // التغيير إلى الإنجليزية
+          //       FitnessApp.setLocale(context, newLocale); // تحديث اللغة
+          //     },
+          //     icon: const Icon(
+          //       Icons.language,
+          //       color: AppColors.mainColor,
+          //       size: 28,
+          //     ),
+          //   ),
+          // ),
           PageView.builder(
             controller: _controller,
             itemCount: pages.length,
@@ -100,8 +114,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 const SizedBox(height: 20),
                 if (_currentPage == 0)
-                  customButton(
-                    title: "Next",
+                  CustomButton(
+                    title: S.of(context).next,
                     onTap: () {
                       _controller.nextPage(
                         duration: const Duration(milliseconds: 500),
@@ -116,8 +130,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      customButton(
-                        title: "Back",
+                      CustomButton(
+                        title: S.of(context).back,
                         onTap: () {
                           _controller.previousPage(
                             duration: const Duration(milliseconds: 500),
@@ -129,11 +143,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         width: width * 0.3,
                         color: Colors.transparent,
                       ),
-                      customButton(
+                      CustomButton(
                         title:
                             _currentPage == pages.length - 1
-                                ? "Get Started"
-                                : "Next",
+                                ? S.of(context).getStarted
+                                : S.of(context).next,
                         onTap: () {
                           if (_currentPage == pages.length - 1) {
                             Navigator.pushReplacementNamed(
