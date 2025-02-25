@@ -24,8 +24,8 @@ class AuthGlassContainer extends StatelessWidget {
       ),
       gradient: LinearGradient(
         colors: [
-          Colors.white.withOpacity(0.15),
-          Colors.white.withOpacity(0.15),
+          Colors.black.withOpacity(0.10),
+          Colors.black.withOpacity(0.10),
         ],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,

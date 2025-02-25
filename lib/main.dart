@@ -3,6 +3,7 @@ import 'package:fitness_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
   runApp(const FitnessApp());
@@ -37,19 +38,31 @@ class _FitnessAppState extends State<FitnessApp> {
         statusBarIconBrightness: Brightness.dark,
       ),
     );
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: AppRoutes.onboarding,
-      onGenerateRoute: AppRoutes.generateRoute,
-      theme: ThemeData(fontFamily: 'Almarai'),
-      locale: _locale,
-      localizationsDelegates: const [
-        S.delegate,
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: S.delegate.supportedLocales,
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      builder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          initialRoute: AppRoutes.onboarding,
+          onGenerateRoute: AppRoutes.generateRoute,
+          theme: ThemeData(fontFamily: 'Almarai'),
+          locale: _locale,
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: S.delegate.supportedLocales,
+          builder: (context, widget) {
+            return Builder(
+              builder: (context) {
+                return widget!;
+              },
+            );
+          },
+        );
+      },
     );
   }
 }

@@ -24,6 +24,7 @@ dependencies:
   awesome_snackbar_content:
   cached_network_image:
   font_awesome_flutter:
+  flutter_keyboard_visibility:
 
 dev_dependencies:
   flutter_test:

@@ -7,6 +7,7 @@ import 'package:fitness_app/core/routes/routes.dart';
 import 'package:fitness_app/features/Splash&Onbording/presentation/widgets/custom_button.dart';
 import 'package:fitness_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:glass_kit/glass_kit.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -80,9 +81,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             },
           ),
           Positioned(
-            bottom: 20,
-            left: 20,
-            right: 20,
+            bottom: 22.h,
+            left: 0,
+            right: 0,
             child: Column(
               children: [
                 SmoothPageIndicator(
@@ -191,7 +192,7 @@ class OnboardingContent extends StatelessWidget {
       child: Column(
         children: [
           Expanded(
-            flex: 2, // 60% من المساحة للصورة
+            flex: 3, // 60% من المساحة للصورة
             child: Image.asset(
               data.image,
               width: width * 0.9,
@@ -199,11 +200,11 @@ class OnboardingContent extends StatelessWidget {
             ),
           ),
           Expanded(
-            flex: 1, // 40% من المساحة للـ GlassContainer
+            flex: 2, // 40% من المساحة للـ GlassContainer
             child: SingleChildScrollView(
               child: GlassContainer.clearGlass(
                 width: width * 0.95,
-                height: height * 0.24,
+                height: height * 0.29,
                 borderGradient: LinearGradient(
                   colors: [
                     Colors.black.withOpacity(0.13),

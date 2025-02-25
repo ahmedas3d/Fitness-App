@@ -52,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterYourPassword": MessageLookupByLibrary.simpleMessage(
       "ادخل كلمة المرور",
     ),
+    "female": MessageLookupByLibrary.simpleMessage("انثى"),
     "firstName": MessageLookupByLibrary.simpleMessage("الاسم الاول"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
     "getStarted": MessageLookupByLibrary.simpleMessage("ابداء"),
@@ -61,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "lastName": MessageLookupByLibrary.simpleMessage("الاسم الاخير"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "male": MessageLookupByLibrary.simpleMessage("ذكر"),
     "nameTooShort": MessageLookupByLibrary.simpleMessage("الاسم قصير جدا"),
     "next": MessageLookupByLibrary.simpleMessage("التالى"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
@@ -81,9 +83,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "subTitleOn1": MessageLookupByLibrary.simpleMessage("الانضباط"),
     "subTitleOn2": MessageLookupByLibrary.simpleMessage("اتخذ إجراءً اليوم"),
     "subTitleOn3": MessageLookupByLibrary.simpleMessage("يبدأ الان"),
+    "tellUsAboutYourself": MessageLookupByLibrary.simpleMessage(
+      "أخبرنا عن نفسك",
+    ),
     "titleOn1": MessageLookupByLibrary.simpleMessage("السعر الأفضل للأفضلية"),
     "titleOn2": MessageLookupByLibrary.simpleMessage("لا مزيد من الأعذار"),
     "titleOn3": MessageLookupByLibrary.simpleMessage("الرحلة الصحية"),
+    "weNeedToKnowYourGender": MessageLookupByLibrary.simpleMessage(
+      "نحن بحاجة إلى معرفة جنسك",
+    ),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحبا بعودتك"),
   };
 }

@@ -354,6 +354,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Tell Us About Yourself`
+  String get tellUsAboutYourself {
+    return Intl.message(
+      'Tell Us About Yourself',
+      name: 'tellUsAboutYourself',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We Need To Know Your Gender`
+  String get weNeedToKnowYourGender {
+    return Intl.message(
+      'We Need To Know Your Gender',
+      name: 'weNeedToKnowYourGender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Male`
+  String get male {
+    return Intl.message('Male', name: 'male', desc: '', args: []);
+  }
+
+  /// `Female`
+  String get female {
+    return Intl.message('Female', name: 'female', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

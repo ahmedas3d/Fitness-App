@@ -36,5 +36,9 @@
   "register": "تسجيل",
   "passwordMustContain": "يجب ان تحتوي كلمة المرور على:\n- على الاقل 6 حروف\n- حرف كبير (A-Z)\n- حرف صغير (a-z)\n- رقم (0-9)\n- حرف خاص",
   "pleaseEnterEmail": "يرجى ادخال البريد الالكتروني",
-  "invalidEmail": "بريد الكتروني غير صحيح"
+  "invalidEmail": "بريد الكتروني غير صحيح",
+  "tellUsAboutYourself": "أخبرنا عن نفسك",
+  "weNeedToKnowYourGender": "نحن بحاجة إلى معرفة جنسك",
+  "male": "ذكر",
+  "female": "انثى"
 }

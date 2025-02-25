@@ -1,6 +1,7 @@
-import 'package:fitness_app/features/AuthFeature/presentation/screens/signup_screen.dart'
+import 'package:fitness_app/features/AuthFeature/presentation/screens/SignIn&SignUp/signup_screen.dart'
     show SignUpScreen;
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/auth_glass_container.dart';
+import 'package:fitness_app/features/AuthFeature/presentation/widgets/create_route.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/custom_text_field.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/custom_text_password.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/or_divider.dart';
@@ -8,11 +9,11 @@ import 'package:fitness_app/features/AuthFeature/presentation/widgets/social_but
 import 'package:fitness_app/features/Splash&Onbording/presentation/widgets/custom_button.dart';
 import 'package:fitness_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import '../../../../../../core/constants/app_colors.dart';
-import '../../../../../../core/constants/app_images.dart';
-import '../../../../../../core/constants/app_text_styles.dart';
-import '../widgets/bg_blur.dart';
+import '../../../../../../../core/constants/app_colors.dart';
+import '../../../../../../../core/constants/app_images.dart';
+import '../../../../../../../core/constants/app_text_styles.dart';
 
 class SignInScreen extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
@@ -24,43 +25,51 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          const BgBlur(image: AppImages.background2),
-          _buildHeader(context),
-          Center(child: _buildAuthForm(context)),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildHeader(BuildContext context) {
-    return Positioned(
-      top: 30,
-      left: 0,
-      right: 0,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage(AppImages.background2),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(Colors.black54, BlendMode.darken),
+          ),
+        ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [Image.asset(AppImages.logo, height: 100)],
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [_buildHeader(context), _buildAuthForm(context)],
+                ),
+              ),
             ),
-            const SizedBox(height: 20),
-            Text(S.of(context).heyThere, style: AppTextStyles.bodyText1),
-            Text(S.of(context).welcomeBack, style: AppTextStyles.heading1),
           ],
         ),
       ),
     );
   }
 
+  Widget _buildHeader(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.r),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [Image.asset(AppImages.logo, height: 100.h)],
+          ),
+          SizedBox(height: 20.h),
+          Text(S.of(context).heyThere, style: AppTextStyles.bodyText1),
+          Text(S.of(context).welcomeBack, style: AppTextStyles.heading1),
+        ],
+      ),
+    );
+  }
+
   Widget _buildAuthForm(BuildContext context) {
     return AuthGlassContainer(
-      width: MediaQuery.of(context).size.width * 0.95,
-      height: MediaQuery.of(context).size.height * 0.50,
+      width: 0.95.sw, // نسبة 88% من عرض الشاشة
+      height: 0.50.sh,
       child: Form(
         key: _formSignInKey,
         child: SingleChildScrollView(
@@ -161,7 +170,11 @@ class SignInScreen extends StatelessWidget {
           style: const TextStyle(color: Colors.white),
         ),
         TextButton(
-          onPressed: () => Navigator.push(context, _createRoute()),
+          onPressed:
+              () => Navigator.push(
+                context,
+                CustomPageRoute(page: SignUpScreen()),
+              ),
           child: Text(
             S.of(context).register,
             style: const TextStyle(color: AppColors.mainColor),
@@ -179,12 +192,3 @@ class SignInScreen extends StatelessWidget {
 }
 
 // Function to create a route for navigation to the SignUpScreen
-Route _createRoute() {
-  return PageRouteBuilder(
-    transitionDuration: Duration(milliseconds: 200),
-    pageBuilder: (context, animation, secondaryAnimation) => SignUpScreen(),
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      return FadeTransition(opacity: animation, child: child);
-    },
-  );
-}

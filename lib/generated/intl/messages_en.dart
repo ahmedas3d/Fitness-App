@@ -52,6 +52,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enterYourPassword": MessageLookupByLibrary.simpleMessage(
       "Enter your password",
     ),
+    "female": MessageLookupByLibrary.simpleMessage("Female"),
     "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
@@ -61,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "male": MessageLookupByLibrary.simpleMessage("Male"),
     "nameTooShort": MessageLookupByLibrary.simpleMessage("Name is too short"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
@@ -81,9 +83,15 @@ class MessageLookup extends MessageLookupByLibrary {
     "subTitleOn1": MessageLookupByLibrary.simpleMessage("Is Discipline"),
     "subTitleOn2": MessageLookupByLibrary.simpleMessage("Take Action Today"),
     "subTitleOn3": MessageLookupByLibrary.simpleMessage("Begins Now"),
+    "tellUsAboutYourself": MessageLookupByLibrary.simpleMessage(
+      "Tell Us About Yourself",
+    ),
     "titleOn1": MessageLookupByLibrary.simpleMessage("The Price Of Excellence"),
     "titleOn2": MessageLookupByLibrary.simpleMessage("No More Excuses"),
     "titleOn3": MessageLookupByLibrary.simpleMessage("Your Fitness Journey"),
+    "weNeedToKnowYourGender": MessageLookupByLibrary.simpleMessage(
+      "We Need To Know Your Gender",
+    ),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back"),
   };
 }
