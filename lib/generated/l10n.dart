@@ -384,6 +384,46 @@ class S {
   String get female {
     return Intl.message('Female', name: 'female', desc: '', args: []);
   }
+
+  /// `HOW old are you?`
+  String get howOldAreYou {
+    return Intl.message(
+      'HOW old are you?',
+      name: 'howOldAreYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `this helps us create Your personalized plan`
+  String get thisHelpsUsCreateYourPersonalizedPlan {
+    return Intl.message(
+      'this helps us create Your personalized plan',
+      name: 'thisHelpsUsCreateYourPersonalizedPlan',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Year`
+  String get age {
+    return Intl.message('Year', name: 'age', desc: '', args: []);
+  }
+
+  /// `Hight(cm)`
+  String get hight {
+    return Intl.message('Hight(cm)', name: 'hight', desc: '', args: []);
+  }
+
+  /// `What is your weight?`
+  String get whatIsYourWeight {
+    return Intl.message(
+      'What is your weight?',
+      name: 'whatIsYourWeight',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

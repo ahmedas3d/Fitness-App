@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "age": MessageLookupByLibrary.simpleMessage("Year"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
@@ -57,6 +58,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
     "heyThere": MessageLookupByLibrary.simpleMessage("Hey There"),
+    "hight": MessageLookupByLibrary.simpleMessage("Hight(cm)"),
+    "howOldAreYou": MessageLookupByLibrary.simpleMessage("HOW old are you?"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "Invalid email format",
     ),
@@ -86,6 +89,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "tellUsAboutYourself": MessageLookupByLibrary.simpleMessage(
       "Tell Us About Yourself",
     ),
+    "thisHelpsUsCreateYourPersonalizedPlan":
+        MessageLookupByLibrary.simpleMessage(
+          "this helps us create Your personalized plan",
+        ),
     "titleOn1": MessageLookupByLibrary.simpleMessage("The Price Of Excellence"),
     "titleOn2": MessageLookupByLibrary.simpleMessage("No More Excuses"),
     "titleOn3": MessageLookupByLibrary.simpleMessage("Your Fitness Journey"),
@@ -93,5 +100,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "We Need To Know Your Gender",
     ),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back"),
+    "whatIsYourWeight": MessageLookupByLibrary.simpleMessage(
+      "What is your weight?",
+    ),
   };
 }

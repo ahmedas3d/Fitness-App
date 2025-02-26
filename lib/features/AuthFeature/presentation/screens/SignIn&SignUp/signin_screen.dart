@@ -28,7 +28,7 @@ class SignInScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(AppImages.background2),
+            image: AssetImage(AppImages.background2),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(Colors.black54, BlendMode.darken),
           ),
@@ -69,7 +69,7 @@ class SignInScreen extends StatelessWidget {
   Widget _buildAuthForm(BuildContext context) {
     return AuthGlassContainer(
       width: 0.95.sw, // نسبة 88% من عرض الشاشة
-      height: 0.50.sh,
+      height: 0.55.sh,
       child: Form(
         key: _formSignInKey,
         child: SingleChildScrollView(

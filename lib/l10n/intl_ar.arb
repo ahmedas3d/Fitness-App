@@ -40,5 +40,10 @@
   "tellUsAboutYourself": "أخبرنا عن نفسك",
   "weNeedToKnowYourGender": "نحن بحاجة إلى معرفة جنسك",
   "male": "ذكر",
-  "female": "انثى"
+  "female": "انثى",
+  "howOldAreYou": "كم عمرك؟",
+  "thisHelpsUsCreateYourPersonalizedPlan": "هذا يساعدنا في انشاء خطةك الشخصية",
+  "age": "العمر",
+  "hight": "الطول",
+  "weNeedToKnowYourHight": "نحن بحاجة إلى معرفة طولك"
 }

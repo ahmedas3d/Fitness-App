@@ -2,7 +2,9 @@ import 'package:fitness_app/core/constants/app_colors.dart';
 import 'package:fitness_app/core/constants/app_images.dart';
 import 'package:fitness_app/core/constants/app_text_styles.dart';
 import 'package:fitness_app/core/constants/padding_constants.dart';
+import 'package:fitness_app/features/AuthFeature/presentation/screens/Age/age_screen.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/auth_glass_container.dart';
+import 'package:fitness_app/features/AuthFeature/presentation/widgets/create_route.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/custom_row.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/progress_indicator.dart';
 import 'package:fitness_app/features/Splash&Onbording/presentation/widgets/custom_button.dart';
@@ -26,7 +28,7 @@ class _GenderScreenState extends State<GenderScreen> {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(AppImages.background2),
+            image: AssetImage(AppImages.background2),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(Colors.black54, BlendMode.darken),
           ),
@@ -45,7 +47,12 @@ class _GenderScreenState extends State<GenderScreen> {
                     if (selectedGender != null)
                       CustomButton(
                         title: S.of(context).next,
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            CustomPageRoute(page: const AgeScreen()),
+                          );
+                        },
                         color: AppColors.mainColor,
                         textColor: Colors.white,
                         width: 0.95.sw,
@@ -63,7 +70,7 @@ class _GenderScreenState extends State<GenderScreen> {
   Widget _buildGender(BuildContext context) {
     return AuthGlassContainer(
       width: 0.95.sw,
-      height: 0.35.sh,
+      height: 0.36.sh,
       child: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -80,8 +87,8 @@ class _GenderScreenState extends State<GenderScreen> {
                   });
                 },
                 child: Container(
-                  height: 80.h,
-                  width: 80.h,
+                  height: 85.h,
+                  width: 85.h,
                   decoration: BoxDecoration(
                     color:
                         selectedGender == S.of(context).male
@@ -128,8 +135,8 @@ class _GenderScreenState extends State<GenderScreen> {
                   });
                 },
                 child: Container(
-                  height: 80.h,
-                  width: 80.h,
+                  height: 85.h,
+                  width: 85.h,
                   decoration: BoxDecoration(
                     color:
                         selectedGender == S.of(context).female

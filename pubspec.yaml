@@ -21,7 +21,6 @@ dependencies:
   smooth_page_indicator: ^1.2.0+3
   flutter_svg: ^2.0.17
   flutter_screenutil:
-  awesome_snackbar_content:
   cached_network_image:
   font_awesome_flutter:
   flutter_keyboard_visibility:

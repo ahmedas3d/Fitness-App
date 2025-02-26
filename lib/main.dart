@@ -40,29 +40,20 @@ class _FitnessAppState extends State<FitnessApp> {
     );
     return ScreenUtilInit(
       designSize: const Size(375, 812),
-      builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          initialRoute: AppRoutes.onboarding,
-          onGenerateRoute: AppRoutes.generateRoute,
-          theme: ThemeData(fontFamily: 'Almarai'),
-          locale: _locale,
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: S.delegate.supportedLocales,
-          builder: (context, widget) {
-            return Builder(
-              builder: (context) {
-                return widget!;
-              },
-            );
-          },
-        );
-      },
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        initialRoute: AppRoutes.onboarding,
+        onGenerateRoute: AppRoutes.generateRoute,
+        theme: ThemeData(fontFamily: 'Almarai'),
+        locale: _locale,
+        localizationsDelegates: const [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: S.delegate.supportedLocales,
+      ),
     );
   }
 }

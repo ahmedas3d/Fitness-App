@@ -40,5 +40,10 @@
   "tellUsAboutYourself": "Tell Us About Yourself",
   "weNeedToKnowYourGender": "We Need To Know Your Gender",
   "male": "Male",
-  "female": "Female"
+  "female": "Female",
+  "howOldAreYou": "HOW old are you?",
+  "thisHelpsUsCreateYourPersonalizedPlan": "this helps us create Your personalized plan",
+  "age": "Year",
+  "hight": "Hight(cm)",
+  "whatIsYourWeight": "What is your weight?"
 }

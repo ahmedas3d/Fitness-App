@@ -96,37 +96,29 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     dotWidth: 8,
                   ),
                 ),
-                const SizedBox(height: 20),
-                if (_currentPage == 0)
-                  CustomButton(
-                    title: S.of(context).next,
-                    onTap: () {
-                      _controller.nextPage(
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.ease,
-                      );
-                    },
-                    color: AppColors.mainColor,
-                    textColor: AppColors.fontColor1,
-                    width: width * 0.8,
-                  )
-                else
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                SizedBox(height: 15.h),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.w),
+                  child: Row(
+                    mainAxisAlignment:
+                        _currentPage == 0
+                            ? MainAxisAlignment.center
+                            : MainAxisAlignment.spaceBetween,
                     children: [
-                      CustomButton(
-                        title: S.of(context).back,
-                        onTap: () {
-                          _controller.previousPage(
-                            duration: const Duration(milliseconds: 500),
-                            curve: Curves.ease,
-                          );
-                        },
-                        borderColor: AppColors.secondColor30,
-                        textColor: Colors.white,
-                        width: width * 0.3,
-                        color: Colors.transparent,
-                      ),
+                      if (_currentPage > 0)
+                        CustomButton(
+                          title: S.of(context).back,
+                          onTap: () {
+                            _controller.previousPage(
+                              duration: const Duration(milliseconds: 500),
+                              curve: Curves.ease,
+                            );
+                          },
+                          borderColor: AppColors.secondColor30,
+                          textColor: Colors.white,
+                          width: width * 0.3,
+                          color: Colors.transparent,
+                        ),
                       CustomButton(
                         title:
                             _currentPage == pages.length - 1
@@ -147,10 +139,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         },
                         color: AppColors.mainColor,
                         textColor: AppColors.fontColor1,
-                        width: width * 0.3,
+                        width:
+                            _currentPage == 0
+                                ? width * 0.85
+                                : width * 0.3, // تغيير عرض الزر هنا
                       ),
                     ],
                   ),
+                ),
               ],
             ),
           ),
@@ -170,6 +166,7 @@ class OnboardingData {
     required this.title,
     required this.subtitle,
     required this.description,
+    Key? key,
   });
 }
 
@@ -182,52 +179,57 @@ class OnboardingContent extends StatelessWidget {
     required this.data,
     required this.width,
     required this.height,
-    Key? key, // تم تغيير ValueKey إلى Key
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 35),
-      child: Column(
-        children: [
-          Expanded(
-            flex: 3, // 60% من المساحة للصورة
-            child: Image.asset(
-              data.image,
-              width: width * 0.9,
-              fit: BoxFit.cover,
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.only(top: 35.h),
+        child: Column(
+          children: [
+            SizedBox(
+              height: height * 0.58, // تخصيص المساحة للصورة فقط
+              child: Image.asset(
+                data.image,
+                width: width * 0.9,
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          Expanded(
-            flex: 2, // 40% من المساحة للـ GlassContainer
-            child: SingleChildScrollView(
-              child: GlassContainer.clearGlass(
-                width: width * 0.95,
-                height: height * 0.29,
-                borderGradient: LinearGradient(
-                  colors: [
-                    Colors.black.withOpacity(0.13),
-                    Colors.black.withOpacity(0.13),
-                  ],
-                ),
-                gradient: LinearGradient(
-                  colors: [
-                    Colors.black.withOpacity(0.13),
-                    Colors.black.withOpacity(0.13),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(30),
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
+            SizedBox(height: 5.h),
+            GlassContainer.clearGlass(
+              width: width * 0.95,
+              height: height * 0.28, // ضبط الارتفاع لتجنب Overflow
+              borderGradient: LinearGradient(
+                colors: [
+                  Colors.black.withOpacity(0.13),
+                  Colors.black.withOpacity(0.13),
+                ],
+              ),
+              gradient: LinearGradient(
+                colors: [
+                  Colors.black.withOpacity(0.13),
+                  Colors.black.withOpacity(0.13),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(30),
+              child: Padding(
+                padding: EdgeInsets.all(20.w),
+                child: SingleChildScrollView(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(data.title, style: AppTextStyles.heading2),
+                      Text(
+                        data.title,
+                        key: Key(data.title), // ضع الـ Key هنا
+                        style: AppTextStyles.heading2,
+                      ),
+                      SizedBox(height: 8.h),
                       Text(data.subtitle, style: AppTextStyles.heading2),
-                      const SizedBox(height: 10),
+                      SizedBox(height: 10.h),
                       Text(
                         data.description,
                         textAlign: TextAlign.center,
@@ -238,8 +240,8 @@ class OnboardingContent extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

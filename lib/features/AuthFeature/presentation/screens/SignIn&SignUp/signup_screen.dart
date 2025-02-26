@@ -30,7 +30,7 @@ class SignUpScreen extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(AppImages.background2),
+            image: AssetImage(AppImages.background2),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(Colors.black54, BlendMode.darken),
           ),
@@ -70,8 +70,8 @@ class SignUpScreen extends StatelessWidget {
 
   Widget _buildAuthForm(BuildContext context) {
     return AuthGlassContainer(
-      width: 0.95.sw, // نسبة 88% من عرض الشاشة
-      height: 0.62.sh,
+      width: 0.95.sw,
+      height: 0.65.sh,
       child: Form(
         key: _formSignUpKey,
         child: ListView(
