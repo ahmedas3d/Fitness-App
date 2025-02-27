@@ -1,31 +1,30 @@
 import 'package:fitness_app/core/constants/app_colors.dart';
 import 'package:fitness_app/core/constants/app_images.dart';
 import 'package:fitness_app/core/constants/padding_constants.dart';
-import 'package:fitness_app/features/AuthFeature/presentation/screens/Goal/goal_screen.dart';
+import 'package:fitness_app/features/AuthFeature/presentation/screens/Hight/hight_screen.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/auth_glass_container.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/create_route.dart';
-import 'package:fitness_app/features/AuthFeature/presentation/widgets/picker_widget.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/custom_row.dart';
+import 'package:fitness_app/features/AuthFeature/presentation/widgets/picker_widget.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/progress_indicator.dart';
 import 'package:fitness_app/features/Splash&Onbording/presentation/widgets/custom_button.dart';
 import 'package:fitness_app/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HightScreen extends StatefulWidget {
-  const HightScreen({super.key});
+class WeightScreen extends StatefulWidget {
+  const WeightScreen({super.key});
 
   @override
-  State<HightScreen> createState() => _HightScreenState();
+  State<WeightScreen> createState() => _WeightScreenState();
 }
 
-class _HightScreenState extends State<HightScreen> {
-  int selectedHight = 150;
+class _WeightScreenState extends State<WeightScreen> {
+  int selectedWeight = 85;
   final PageController _pageController = PageController(
     viewportFraction: 0.17,
-    initialPage: 150 - 100,
+    initialPage: 85 - 50,
   );
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +43,7 @@ class _HightScreenState extends State<HightScreen> {
                 child: Column(
                   children: [
                     CustomRow(
-                      text1: S.of(context).weNeedToKnowYourHight,
+                      text1: S.of(context).weNeedToKnowYourWeight,
                       text2:
                           S.of(context).thisHelpsUsCreateYourPersonalizedPlan,
                     ),
@@ -59,22 +58,22 @@ class _HightScreenState extends State<HightScreen> {
                           child: Column(
                             children: [
                               const CustomProgressIndicator(
-                                progress: 4,
+                                progress: 3,
                                 total: 6,
-                                current: 4,
+                                current: 3,
                               ),
                               SizedBox(height: 10.h),
                               PickerWidget(
-                                selectedValue: selectedHight,
+                                selectedValue: selectedWeight,
                                 pageController: _pageController,
-                                onValueChanged: (newHight) {
+                                onValueChanged: (newWeight) {
                                   setState(() {
-                                    selectedHight = newHight;
+                                    selectedWeight = newWeight;
                                   });
                                 },
-                                title: S.of(context).hight,
+                                title: S.of(context).weight,
                                 count: 300,
-                                startFrom: 100,
+                                startFrom: 50,
                               ),
                               Icon(
                                 Icons.arrow_drop_up,
@@ -86,7 +85,7 @@ class _HightScreenState extends State<HightScreen> {
                                 onTap: () {
                                   Navigator.push(
                                     context,
-                                    CustomPageRoute(page: const GoalScreen()),
+                                    CustomPageRoute(page: const HightScreen()),
                                   );
                                 },
                                 color: AppColors.mainColor,

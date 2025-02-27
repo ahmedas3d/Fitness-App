@@ -415,14 +415,114 @@ class S {
     return Intl.message('Hight(cm)', name: 'hight', desc: '', args: []);
   }
 
-  /// `What is your weight?`
-  String get whatIsYourWeight {
+  /// `What is your Hight?`
+  String get weNeedToKnowYourHight {
     return Intl.message(
-      'What is your weight?',
-      name: 'whatIsYourWeight',
+      'What is your Hight?',
+      name: 'weNeedToKnowYourHight',
       desc: '',
       args: [],
     );
+  }
+
+  /// `Weight(kg)`
+  String get weight {
+    return Intl.message('Weight(kg)', name: 'weight', desc: '', args: []);
+  }
+
+  /// `What is your Weight?`
+  String get weNeedToKnowYourWeight {
+    return Intl.message(
+      'What is your Weight?',
+      name: 'weNeedToKnowYourWeight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `What is Your Goal ?`
+  String get whatIsYourGoal {
+    return Intl.message(
+      'What is Your Goal ?',
+      name: 'whatIsYourGoal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gain weight`
+  String get gainWeight {
+    return Intl.message('Gain weight', name: 'gainWeight', desc: '', args: []);
+  }
+
+  /// `Lose weight`
+  String get loseWeight {
+    return Intl.message('Lose weight', name: 'loseWeight', desc: '', args: []);
+  }
+
+  /// `Get fitter`
+  String get getFitter {
+    return Intl.message('Get fitter', name: 'getFitter', desc: '', args: []);
+  }
+
+  /// `Gain more flexible`
+  String get gainMoreFlexible {
+    return Intl.message(
+      'Gain more flexible',
+      name: 'gainMoreFlexible',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Learn the basic`
+  String get learnTheBasic {
+    return Intl.message(
+      'Learn the basic',
+      name: 'learnTheBasic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Regular Physical Activity?`
+  String get yourRegularPhysicalActivityLevel {
+    return Intl.message(
+      'Your Regular Physical Activity?',
+      name: 'yourRegularPhysicalActivityLevel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rookie`
+  String get rookie {
+    return Intl.message('Rookie', name: 'rookie', desc: '', args: []);
+  }
+
+  /// `Beginner`
+  String get beginner {
+    return Intl.message('Beginner', name: 'beginner', desc: '', args: []);
+  }
+
+  /// `Intermediate`
+  String get intermediate {
+    return Intl.message(
+      'Intermediate',
+      name: 'intermediate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Advance`
+  String get advance {
+    return Intl.message('Advance', name: 'advance', desc: '', args: []);
+  }
+
+  /// `True Beast`
+  String get trueBeast {
+    return Intl.message('True Beast', name: 'trueBeast', desc: '', args: []);
   }
 }
 

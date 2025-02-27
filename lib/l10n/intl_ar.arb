@@ -45,5 +45,19 @@
   "thisHelpsUsCreateYourPersonalizedPlan": "هذا يساعدنا في انشاء خطةك الشخصية",
   "age": "العمر",
   "hight": "الطول",
-  "weNeedToKnowYourHight": "نحن بحاجة إلى معرفة طولك"
+  "weNeedToKnowYourHight": "نحن بحاجة إلى معرفة طولك",
+  "weight": "الوزن",
+  "weNeedToKnowYourWeight": "نحن بحاجة إلى معرفة وزنك",
+  "whatIsYourGoal": "ما هو هدفك؟",
+  "gainWeight": "زيادة الوزن",
+  "loseWeight": "خسارة الوزن",
+  "getFitter": "الحصول على شخصية افضل",
+  "gainMoreFlexible": "اكتساب المزيد من المرونة",
+  "learnTheBasic": "تعلم الاساسيات",
+  "yourRegularPhysicalActivityLevel": "مستوى نشاطك البدني المعتاد؟",
+  "rookie": "مبتدئ",
+  "beginner": "مبتدئ",
+  "intermediate": "متوسط",
+  "advance": "متقدم",
+  "trueBeast": "الوحش الحقيقي"
 }

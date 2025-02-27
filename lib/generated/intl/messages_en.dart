@@ -22,12 +22,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "advance": MessageLookupByLibrary.simpleMessage("Advance"),
     "age": MessageLookupByLibrary.simpleMessage("Year"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
     "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "back": MessageLookupByLibrary.simpleMessage("Back"),
+    "beginner": MessageLookupByLibrary.simpleMessage("Beginner"),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create An Account"),
     "descOn1": MessageLookupByLibrary.simpleMessage(
       "Lorem ipsum dolor sit amet consectetur. Eu urna ut gravida quis id pretium purus. Mauris massa.",
@@ -56,15 +58,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "female": MessageLookupByLibrary.simpleMessage("Female"),
     "firstName": MessageLookupByLibrary.simpleMessage("First Name"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+    "gainMoreFlexible": MessageLookupByLibrary.simpleMessage(
+      "Gain more flexible",
+    ),
+    "gainWeight": MessageLookupByLibrary.simpleMessage("Gain weight"),
+    "getFitter": MessageLookupByLibrary.simpleMessage("Get fitter"),
     "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
     "heyThere": MessageLookupByLibrary.simpleMessage("Hey There"),
     "hight": MessageLookupByLibrary.simpleMessage("Hight(cm)"),
     "howOldAreYou": MessageLookupByLibrary.simpleMessage("HOW old are you?"),
+    "intermediate": MessageLookupByLibrary.simpleMessage("Intermediate"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "Invalid email format",
     ),
     "lastName": MessageLookupByLibrary.simpleMessage("Last Name"),
+    "learnTheBasic": MessageLookupByLibrary.simpleMessage("Learn the basic"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "loseWeight": MessageLookupByLibrary.simpleMessage("Lose weight"),
     "male": MessageLookupByLibrary.simpleMessage("Male"),
     "nameTooShort": MessageLookupByLibrary.simpleMessage("Name is too short"),
     "next": MessageLookupByLibrary.simpleMessage("Next"),
@@ -82,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Please enter your last name",
     ),
     "register": MessageLookupByLibrary.simpleMessage("Register"),
+    "rookie": MessageLookupByLibrary.simpleMessage("Rookie"),
     "skip": MessageLookupByLibrary.simpleMessage("Skip"),
     "subTitleOn1": MessageLookupByLibrary.simpleMessage("Is Discipline"),
     "subTitleOn2": MessageLookupByLibrary.simpleMessage("Take Action Today"),
@@ -96,12 +107,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "titleOn1": MessageLookupByLibrary.simpleMessage("The Price Of Excellence"),
     "titleOn2": MessageLookupByLibrary.simpleMessage("No More Excuses"),
     "titleOn3": MessageLookupByLibrary.simpleMessage("Your Fitness Journey"),
+    "trueBeast": MessageLookupByLibrary.simpleMessage("True Beast"),
     "weNeedToKnowYourGender": MessageLookupByLibrary.simpleMessage(
       "We Need To Know Your Gender",
     ),
+    "weNeedToKnowYourHight": MessageLookupByLibrary.simpleMessage(
+      "What is your Hight?",
+    ),
+    "weNeedToKnowYourWeight": MessageLookupByLibrary.simpleMessage(
+      "What is your Weight?",
+    ),
+    "weight": MessageLookupByLibrary.simpleMessage("Weight(kg)"),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("Welcome Back"),
-    "whatIsYourWeight": MessageLookupByLibrary.simpleMessage(
-      "What is your weight?",
+    "whatIsYourGoal": MessageLookupByLibrary.simpleMessage(
+      "What is Your Goal ?",
+    ),
+    "yourRegularPhysicalActivityLevel": MessageLookupByLibrary.simpleMessage(
+      "Your Regular Physical Activity?",
     ),
   };
 }

@@ -87,8 +87,8 @@ class _GenderScreenState extends State<GenderScreen> {
                   });
                 },
                 child: Container(
-                  height: 85.h,
-                  width: 85.h,
+                  height: 90.h,
+                  width: 90.h,
                   decoration: BoxDecoration(
                     color:
                         selectedGender == S.of(context).male
@@ -135,8 +135,8 @@ class _GenderScreenState extends State<GenderScreen> {
                   });
                 },
                 child: Container(
-                  height: 85.h,
-                  width: 85.h,
+                  height: 90.h,
+                  width: 90.h,
                   decoration: BoxDecoration(
                     color:
                         selectedGender == S.of(context).female

@@ -68,7 +68,7 @@ class SignInScreen extends StatelessWidget {
 
   Widget _buildAuthForm(BuildContext context) {
     return AuthGlassContainer(
-      width: 0.95.sw, // نسبة 88% من عرض الشاشة
+      width: 0.95.sw,
       height: 0.55.sh,
       child: Form(
         key: _formSignInKey,
@@ -127,7 +127,10 @@ class SignInScreen extends StatelessWidget {
         onPressed: () {},
         child: Text(
           S.of(context).forgotPassword,
-          style: const TextStyle(color: AppColors.mainColor),
+          style: const TextStyle(
+            color: AppColors.mainColor,
+            decoration: TextDecoration.underline,
+          ),
         ),
       ),
     );

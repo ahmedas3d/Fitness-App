@@ -22,12 +22,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "advance": MessageLookupByLibrary.simpleMessage("متقدم"),
     "age": MessageLookupByLibrary.simpleMessage("العمر"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
       "لديك حساب بالفعل؟",
     ),
     "arabic": MessageLookupByLibrary.simpleMessage("العربية"),
     "back": MessageLookupByLibrary.simpleMessage("السابق"),
+    "beginner": MessageLookupByLibrary.simpleMessage("مبتدئ"),
     "createAccount": MessageLookupByLibrary.simpleMessage("انشاء حساب"),
     "descOn1": MessageLookupByLibrary.simpleMessage(
       "لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليكيوب أيوسمود تيمبور",
@@ -56,14 +58,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "female": MessageLookupByLibrary.simpleMessage("انثى"),
     "firstName": MessageLookupByLibrary.simpleMessage("الاسم الاول"),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور؟"),
+    "gainMoreFlexible": MessageLookupByLibrary.simpleMessage(
+      "اكتساب المزيد من المرونة",
+    ),
+    "gainWeight": MessageLookupByLibrary.simpleMessage("زيادة الوزن"),
+    "getFitter": MessageLookupByLibrary.simpleMessage("الحصول على شخصية افضل"),
     "getStarted": MessageLookupByLibrary.simpleMessage("ابداء"),
     "heyThere": MessageLookupByLibrary.simpleMessage("مرحبا"),
+    "hight": MessageLookupByLibrary.simpleMessage("الطول"),
     "howOldAreYou": MessageLookupByLibrary.simpleMessage("كم عمرك؟"),
+    "intermediate": MessageLookupByLibrary.simpleMessage("متوسط"),
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "بريد الكتروني غير صحيح",
     ),
     "lastName": MessageLookupByLibrary.simpleMessage("الاسم الاخير"),
+    "learnTheBasic": MessageLookupByLibrary.simpleMessage("تعلم الاساسيات"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "loseWeight": MessageLookupByLibrary.simpleMessage("خسارة الوزن"),
     "male": MessageLookupByLibrary.simpleMessage("ذكر"),
     "nameTooShort": MessageLookupByLibrary.simpleMessage("الاسم قصير جدا"),
     "next": MessageLookupByLibrary.simpleMessage("التالى"),
@@ -81,6 +92,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "يرجى ادخال اسمك الاخير",
     ),
     "register": MessageLookupByLibrary.simpleMessage("تسجيل"),
+    "rookie": MessageLookupByLibrary.simpleMessage("مبتدئ"),
     "skip": MessageLookupByLibrary.simpleMessage("تخطى"),
     "subTitleOn1": MessageLookupByLibrary.simpleMessage("الانضباط"),
     "subTitleOn2": MessageLookupByLibrary.simpleMessage("اتخذ إجراءً اليوم"),
@@ -95,9 +107,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "titleOn1": MessageLookupByLibrary.simpleMessage("السعر الأفضل للأفضلية"),
     "titleOn2": MessageLookupByLibrary.simpleMessage("لا مزيد من الأعذار"),
     "titleOn3": MessageLookupByLibrary.simpleMessage("الرحلة الصحية"),
+    "trueBeast": MessageLookupByLibrary.simpleMessage("الوحش الحقيقي"),
     "weNeedToKnowYourGender": MessageLookupByLibrary.simpleMessage(
       "نحن بحاجة إلى معرفة جنسك",
     ),
+    "weNeedToKnowYourHight": MessageLookupByLibrary.simpleMessage(
+      "نحن بحاجة إلى معرفة طولك",
+    ),
+    "weNeedToKnowYourWeight": MessageLookupByLibrary.simpleMessage(
+      "نحن بحاجة إلى معرفة وزنك",
+    ),
+    "weight": MessageLookupByLibrary.simpleMessage("الوزن"),
     "welcomeBack": MessageLookupByLibrary.simpleMessage("مرحبا بعودتك"),
+    "whatIsYourGoal": MessageLookupByLibrary.simpleMessage("ما هو هدفك؟"),
+    "yourRegularPhysicalActivityLevel": MessageLookupByLibrary.simpleMessage(
+      "مستوى نشاطك البدني المعتاد؟",
+    ),
   };
 }

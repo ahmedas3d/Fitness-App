@@ -45,5 +45,19 @@
   "thisHelpsUsCreateYourPersonalizedPlan": "this helps us create Your personalized plan",
   "age": "Year",
   "hight": "Hight(cm)",
-  "whatIsYourWeight": "What is your weight?"
+  "weNeedToKnowYourHight": "What is your Hight?",
+  "weight": "Weight(kg)",
+  "weNeedToKnowYourWeight": "What is your Weight?",
+  "whatIsYourGoal": "What is Your Goal ?",
+  "gainWeight": "Gain weight",
+  "loseWeight": "Lose weight",
+  "getFitter": "Get fitter",
+  "gainMoreFlexible": "Gain more flexible",
+  "learnTheBasic": "Learn the basic",
+  "yourRegularPhysicalActivityLevel": "Your Regular Physical Activity?",
+  "rookie": "Rookie",
+  "beginner": "Beginner",
+  "intermediate": "Intermediate",
+  "advance": "Advance",
+  "trueBeast": "True Beast"
 }

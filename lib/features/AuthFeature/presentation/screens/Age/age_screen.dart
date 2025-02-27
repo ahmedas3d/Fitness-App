@@ -1,7 +1,7 @@
 import 'package:fitness_app/core/constants/app_colors.dart';
 import 'package:fitness_app/core/constants/app_images.dart';
 import 'package:fitness_app/core/constants/padding_constants.dart';
-import 'package:fitness_app/features/AuthFeature/presentation/screens/Hight/hight_screen.dart';
+import 'package:fitness_app/features/AuthFeature/presentation/screens/Weight/weight_screen.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/auth_glass_container.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/create_route.dart';
 import 'package:fitness_app/features/AuthFeature/presentation/widgets/picker_widget.dart';
@@ -86,7 +86,7 @@ class _AgeScreenState extends State<AgeScreen> {
                                 onTap: () {
                                   Navigator.push(
                                     context,
-                                    CustomPageRoute(page: const HightScreen()),
+                                    CustomPageRoute(page: const WeightScreen()),
                                   );
                                 },
                                 color: AppColors.mainColor,
